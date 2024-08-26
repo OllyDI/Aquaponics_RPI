@@ -13,19 +13,8 @@ const { window } = new JSDOM("");
 const $ = require("jquery")(window);
 var requestIp = require('request-ip');
 // const { exec } = require('child_process');
-// var Stream = require('node-rtsp-stream')
-// const streamUrl = '';
-// var stream = new Stream({
-// 	name: 'name',
-// 	streamUrl: streamUrl,
-// 	wsPort: 9999,
-// 	ffmpegOptions: { // options ffmpeg flags
-// 		'-stats': '', // an option with no neccessary value uses a blank string
-// 		'-r': 30 // options with required values specify the value after the key
-// 	}
-// })
+equire("dotenv").config({ path: "lib/settings.env" })
 
-require("dotenv").config({ path: "lib/settings.env" })
 
 // DB 설정
 const options = {
@@ -57,6 +46,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.listen(3003, '0.0.0.0');
 
 app.use('/', indexRouter);
+
+
+// var Stream = require('node-rtsp-stream')
+// const streamUrl = '';
+// var stream = new Stream({
+// 	name: 'name',
+// 	streamUrl: streamUrl,
+// 	wsPort: 9999,
+// 	ffmpegOptions: { // options ffmpeg flags
+// 		'-stats': '', // an option with no neccessary value uses a blank string
+// 		'-r': 30 // options with required values specify the value after the key
+// 	}
+// })
 
 
 // 스트리밍
