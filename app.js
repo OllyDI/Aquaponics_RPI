@@ -12,18 +12,18 @@ const { JSDOM } = require("jsdom");
 const { window } = new JSDOM("");
 const $ = require("jquery")(window);
 var requestIp = require('request-ip');
-const { exec } = require('child_process');
-var Stream = require('node-rtsp-stream')
-const streamUrl = '';
-var stream = new Stream({
-	name: 'name',
-	streamUrl: streamUrl,
-	wsPort: 9999,
-	ffmpegOptions: { // options ffmpeg flags
-		'-stats': '', // an option with no neccessary value uses a blank string
-		'-r': 30 // options with required values specify the value after the key
-	}
-})
+// const { exec } = require('child_process');
+// var Stream = require('node-rtsp-stream')
+// const streamUrl = '';
+// var stream = new Stream({
+// 	name: 'name',
+// 	streamUrl: streamUrl,
+// 	wsPort: 9999,
+// 	ffmpegOptions: { // options ffmpeg flags
+// 		'-stats': '', // an option with no neccessary value uses a blank string
+// 		'-r': 30 // options with required values specify the value after the key
+// 	}
+// })
 
 require("dotenv").config({ path: "lib/settings.env" })
 
@@ -58,19 +58,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 
-app.post('/get_stream', function(req, res) {
-  var stream = new Stream({
-    name: 'name',
-    streamUrl: 'rtsp://{aqufarm}:{aqufarm6552}@',
-    wsPort: 9999,
-    ffmpegOptions: { // options ffmpeg flags
-      '-stats': '', // an option with no neccessary value uses a blank string
-      '-r': 30 // options with required values specify the value after the key
-    }
-  })
 
-  res.send(stream);
-})
+// 스트리밍
+// app.post('/get_stream', function(req, res) {
+//   var stream = new Stream({
+//     name: 'name',
+//     streamUrl: 'rtsp://{aqufarm}:{aqufarm6552}@',
+//     wsPort: 9999,
+//     ffmpegOptions: { // options ffmpeg flags
+//       '-stats': '', // an option with no neccessary value uses a blank string
+//       '-r': 30 // options with required values specify the value after the key
+//     }
+//   })
+
+//   res.send(stream);
+// })
+
 
 app.post('/get_local_device', function(req, res) {
   local_db.query('select * from local_device',
