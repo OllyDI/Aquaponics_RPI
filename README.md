@@ -1,5 +1,5 @@
 ![아쿠팜 로고](https://github.com/user-attachments/assets/cfc13cf4-3388-42ab-b1dd-7f03241e38ce)
-# Aquaponics_RPI
+# 1. Aquaponics_RPI
 
  - 라즈베리파이 서버
 
