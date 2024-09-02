@@ -1,5 +1,5 @@
 ![아쿠팜 로고](https://github.com/user-attachments/assets/cfc13cf4-3388-42ab-b1dd-7f03241e38ce)
-# 1. Aquaponics_RPI
+# Ⅰ. Aquaponics_RPI
 
  - 라즈베리파이 서버
 
@@ -11,7 +11,7 @@
 
  - 자세한 프로젝트 내용은 https://github.com/OllyDI/Aquaponics 레파지토리 참조
 
-## 2. 프로젝트 설계
+## Ⅱ. 프로젝트 설계
 
 □ 데이터베이스 설계
     
