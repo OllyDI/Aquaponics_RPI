@@ -23,8 +23,8 @@
 
  - 센서 - 키(PK), 기기명, 모터, 기포, LED
 
-□ 논리DB모델
+□ 논리DB모델<br>
 ![아쿠팜_라즈 논리db모델](https://github.com/user-attachments/assets/e3188f29-4265-40a9-951d-3bbcb6ea76c0)
 
-□ 물리DB모델
-![아쿠팜_라즈 물리db모델](https://github.com/user-attachments/assets/61c72ea6-b92d-4fcc-888e-2b8cd7d13bb6)
+□ 물리DB모델<br>
+ ![아쿠팜_라즈 물리db모델](https://github.com/user-attachments/assets/61c72ea6-b92d-4fcc-888e-2b8cd7d13bb6)
