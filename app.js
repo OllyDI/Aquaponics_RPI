@@ -11,9 +11,10 @@ var crypto = require('crypto');
 const { JSDOM } = require("jsdom");
 const { window } = new JSDOM("");
 const $ = require("jquery")(window);
+
 var requestIp = require('request-ip');
 // const { exec } = require('child_process');
-equire("dotenv").config({ path: "lib/settings.env" })
+require("dotenv").config({ path: "lib/settings.env" })
 
 
 // DB 설정
@@ -31,6 +32,7 @@ const local_options = {
   password: process.env.LOCAL_DB_PW,
   database: process.env.LOCAL_DB_NAME
 }
+const schedule = require('./lib/schedule')(options, local_options);
 const db = mysql.createConnection(options);
 const local_db = mysql.createConnection(local_options);
 
@@ -44,7 +46,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // app.listen(3003, '0.0.0.0');
-
 app.use('/', indexRouter);
 
 
@@ -126,12 +127,12 @@ app.post('/insert_device', function(req, res) {
     function(err, data) {
       if (err) msg = '기기 설정에 실패했습니다.';
       else {
-        const device_id=data.insertId
+        const device_id = data.insertId;
 
         local_db.query('delete from local_device', function(err) { if(err) throw(err); })
         local_db.query('insert into local_device (local_id, name, wifi_id, wifi_pw, service) values (?, ?, ?, ?, ?)', [device_id, dname, wname, wpw, service],
           function(err, data) {
-            if (err) msg = '기기 설정에 실패했습니다.';
+            if (err) msg = '로컬 기기 설정에 실패했습니다.';
             else {
               ok[0] = 1;
               console.log('local_device');
@@ -246,6 +247,10 @@ app.get('/update_sensor', function(req, res) {
     }
   )
 })
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

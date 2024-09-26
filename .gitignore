@@ -188,5 +188,5 @@ $RECYCLE.BIN/
 
 # Settings
 settings.env
-
+settingsBak.env
 # End of https://www.toptal.com/developers/gitignore/api/windows,node,visualstudiocode

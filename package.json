@@ -24,10 +24,12 @@
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
     "node-rtsp-stream": "^0.0.9",
+    "node-schedule": "^2.1.1",
     "nodemailer": "^6.9.14",
     "passport": "0.7.0",
     "passport-local": "^1.0.0",
     "pm2": "^5.4.0",
+    "project": "file:",
     "request-ip": "^3.3.0",
     "session-file-store": "^1.5.0"
   }
