@@ -99,6 +99,8 @@ app.post('/get_local_device', function(req, res) {
   )
 })
 
+
+// 7인치 디스플레이를 통한 기기 연결
 app.post('/insert_device', function(req, res) {
   const dname = req.body.device_name;
   const wname = req.body.wifi_name;
