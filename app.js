@@ -49,6 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 
 
+// 카메라1
 // var Stream = require('node-rtsp-stream')
 // const streamUrl = '';
 // var stream = new Stream({
@@ -62,7 +63,7 @@ app.use('/', indexRouter);
 // })
 
 
-// 스트리밍
+// 카메라2
 // app.post('/get_stream', function(req, res) {
 //   var stream = new Stream({
 //     name: 'name',
@@ -185,6 +186,7 @@ app.post('/insert_device', function(req, res) {
 })
 
 
+//
 app.post('/get_local_device', function(req, res) {
   db.query('select * from local_device', 
     function(err, data) {
